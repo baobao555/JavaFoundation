@@ -6,14 +6,15 @@ package baobao.enumation;
  * @description 枚举类手动实现
  */
 public class MyEnumation {
+    //初始化常量实例
+    public static final MyEnumation Spring = new MyEnumation("春天","春暖花开");
+    public static final MyEnumation Summer = new MyEnumation("夏天","炎炎夏日");
+    public static final MyEnumation Autumn = new MyEnumation("秋天","秋高气爽");
+    public static final MyEnumation Winter = new MyEnumation("冬天","冰天雪地");
+    private String name;//季节名称
+    private String desc;//季节描述
 
-    public static MyEnumation Spring = new MyEnumation("春天","春暖花开");
-    public static MyEnumation Summer = new MyEnumation("夏天","炎炎夏日");
-    public static MyEnumation Autumn = new MyEnumation("秋天","秋高气爽");
-    public static MyEnumation Winter = new MyEnumation("冬天","冰天雪地");
-    private String name;
-    private String desc;
-
+    //私有化构造函数
     private MyEnumation(){}
 
     private MyEnumation(String name, String desc) {
