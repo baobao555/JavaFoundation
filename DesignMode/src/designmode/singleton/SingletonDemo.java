@@ -1,4 +1,4 @@
-package baobao.designmode.singleton;
+package designmode.singleton;
 
 public class SingletonDemo {
 
@@ -7,7 +7,6 @@ public class SingletonDemo {
 	}
 
 }
-
 
 
 class Singleton1{  //懒汉式，等要用的时候再创建对象，有线程安全问题

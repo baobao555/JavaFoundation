@@ -1,4 +1,4 @@
-package baobao.designmode.singleton;
+package designmode.singleton;
 
 /**
  * @author baobao
