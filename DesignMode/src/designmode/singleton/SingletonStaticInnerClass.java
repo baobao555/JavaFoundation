@@ -7,7 +7,6 @@ package designmode.singleton;
  */
 public class SingletonStaticInnerClass {
     private SingletonStaticInnerClass(){}
-
     //定义静态内部类，包含一个静态的单例对象
     private static class StaticInnerClass{
         private static SingletonStaticInnerClass instance = new SingletonStaticInnerClass();
