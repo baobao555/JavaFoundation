@@ -1,4 +1,4 @@
-package baobao.designmode;
+package designmode;
 
 public class TemplateDemo {
 
