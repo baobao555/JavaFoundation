@@ -12,9 +12,8 @@ import java.lang.annotation.Target;
  */
 
 @Retention(RetentionPolicy.RUNTIME) //运行时保留
-@Target(ElementType.FIELD)  //注解作用于字段
-
+@Target(ElementType.FIELD)  //注解作用于类的成员变量
 public @interface MyAnnotation {
-    //定义注解属性，代表bean属性名对应的json属性名
+    //定义jsonFieldName属性，代表bean属性名对应的json属性名
     String jsonFieldName() default "";
 }

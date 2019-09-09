@@ -11,6 +11,8 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxy {
     public static void main(String[] args) {
+        //保存动态代理所生成的代理类的字节码文件
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         //创建被代理类
         Singer singer = new Singer("Jay");
         //创建InvocationHandler实例，传入被代理类的实例
