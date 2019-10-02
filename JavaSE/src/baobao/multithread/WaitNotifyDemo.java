@@ -35,6 +35,8 @@ class NumberPrinter implements Runnable{
                     e.printStackTrace();
                 }
             }
+            //唤醒其他线程
+            notifyAll();
         }
     }
 }

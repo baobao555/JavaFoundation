@@ -11,5 +11,8 @@ public class DemoStream {
 		
 		list.stream().map(s -> s.split(",")[1]).map(s -> Integer.parseInt(s))
 		.filter(i -> i > 90).forEach(System.out :: println);
+
+		/*list.stream().map(s -> s.split(",")[1]).map(Integer::parseInt)
+				.filter(i -> i > 90).forEach(System.out :: println);*/
 	}
 }
