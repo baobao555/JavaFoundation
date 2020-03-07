@@ -67,7 +67,7 @@ class Person{
 	}
 	
 	private void test() {
-		System.out.println("private method");
+		System.out.println("private factorymethod");
 	}
 	
 	void test1() {

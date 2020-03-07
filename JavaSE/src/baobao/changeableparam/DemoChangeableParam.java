@@ -3,7 +3,7 @@ package baobao.changeableparam;
 public class DemoChangeableParam {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated factorymethod stub
 		int[] arr = {11,22,33,44,55};
 		print(arr);
 		print(1,2,3);

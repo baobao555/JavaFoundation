@@ -1,4 +1,4 @@
-package designmode;
+package designmode.template;
 
 public class TemplateDemo {
 

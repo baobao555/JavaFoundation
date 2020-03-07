@@ -22,6 +22,9 @@ class Singer implements SingSong{
 
     private String name;
 
+    public Singer() {
+    }
+
     public Singer(String name) {
         this.name = name;
     }

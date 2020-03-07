@@ -7,7 +7,10 @@ import java.lang.reflect.Proxy;
 /**
  * @author baobao
  * @date 2019/7/18 0018 10:07
- * @description 动态代理
+ * @description JDK动态代理
+ *
+ * JDK动态代理要求被代理的类必须实现至少1个接口，它会根据接口动态生成代理对象，代理对象和被代理对象实现
+ * 相同的接口，共同拥有接口中的方法
  */
 public class DynamicProxy {
     public static void main(String[] args) {
@@ -28,9 +31,9 @@ public class DynamicProxy {
 class Handler implements InvocationHandler{
 
     //需持有被代理类的引用
-    private Singer singer;
+    private Object singer;
 
-    public Handler(Singer singer) {
+    public Handler(Object singer) {
         this.singer = singer;
     }
 

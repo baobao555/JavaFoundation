@@ -20,6 +20,9 @@ public class SingletonLazyDoubleCheckLock {
         if (instance == null){
             synchronized (SingletonLazyDoubleCheckLock.class){
                 if (instance == null){
+                    //由于new SingletonLazyDoubleCheckLock()不是一个原子操作，要分好几步：1、创建对象 2、初始化 3、赋值给变量
+                    //所以instance如果不是volatile，那么当instance已经不是null的时候，由于指令重排，
+                    //instance可能还没有完成初始化，这个时候返回instance是不正确的
                     instance = new SingletonLazyDoubleCheckLock();
                 }
             }

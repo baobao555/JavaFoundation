@@ -1,4 +1,4 @@
-package baobao.concurrent.juc;
+package baobao.concurrent.juc.collections;
 
 import java.util.List;
 import java.util.Map;

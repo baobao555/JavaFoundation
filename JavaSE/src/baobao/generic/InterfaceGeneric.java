@@ -9,7 +9,7 @@ class InterfaceGeneric implements Inter<String> {
 
 	@Override
 	public void show(String t) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated factorymethod stub
 		
 	}
 	
@@ -22,7 +22,7 @@ class InterfaceGeneric1<T> implements Inter<T> {
 
 	@Override
 	public void show(T t) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated factorymethod stub
 		
 	}
 	

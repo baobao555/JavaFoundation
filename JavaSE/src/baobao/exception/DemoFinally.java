@@ -3,7 +3,7 @@ package baobao.exception;
 public class DemoFinally {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated factorymethod stub
 		System.out.println(method());//30
 
 	}
