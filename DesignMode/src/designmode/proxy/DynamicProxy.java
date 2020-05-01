@@ -21,9 +21,11 @@ public class DynamicProxy {
         //创建InvocationHandler实例，传入被代理类的实例
         Handler handler = new Handler(singer);
         //动态生成代理类
-        Object proxyInstance = Proxy.newProxyInstance(singer.getClass().getClassLoader(), singer.getClass().getInterfaces(),handler);
+        Object proxyInstance = Proxy.newProxyInstance(singer.getClass().getClassLoader(),
+                singer.getClass().getInterfaces(),handler);
         //调用代理类的相关方法，实际会调用到InvocationHandler中的invoke方法
         ((SingSong) proxyInstance).sing();
+        System.out.println(proxyInstance.toString());
     }
 }
 

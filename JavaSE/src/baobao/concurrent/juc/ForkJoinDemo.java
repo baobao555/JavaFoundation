@@ -9,6 +9,17 @@ import java.util.stream.LongStream;
  * @author baobao
  * @create 2020-03-07 19:12
  * @description 演示ForkJoin
+ *
+ * ForkJoin核心思想是将一个大的任务不断拆分成小任务，多核并发执行小任务提升效率
+ * 主要涉及3个类：
+ * 1、ForkJoinPool：执行ForkJoin任务的线程池，可以使用invoke方法提交任务
+ * 2、RecursiveTask：继承自ForkJoinTask，代表有返回值的ForkJoin任务
+ * 3、RecursiveAction：继承自ForkJoinTask，代表无返回值的ForkJoin任务
+ *
+ * 自定义ForkJoinTask步骤：
+ * 1、定义一个任务类，继承自RecursiveTask或RecursiveAction
+ * 2、重写compute方法，判断任务是否可拆分，如果可拆分，拆分到新的任务实例对象中；如果不可拆分，
+ *    直接执行计算逻辑。最后将拆分的结果进行合并返回
  */
 public class ForkJoinDemo {
     public static void main(String[] args) {

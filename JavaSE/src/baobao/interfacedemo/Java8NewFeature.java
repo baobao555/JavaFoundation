@@ -29,11 +29,11 @@ public class Java8NewFeature {
  * JDK8接口的新特性：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法
  */
 interface A{
-	public static void method1() {
+	static void method1() {
 		System.out.println("接口A中的静态方法:method1");
 	}
 	
-	public default void method2() {
+	default void method2() {
 		System.out.println("接口A中的默认方法:method2");
 	}
 	
