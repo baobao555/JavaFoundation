@@ -61,6 +61,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicDemo {
     public static void main(String[] args) {
         MyData data = new MyData();
+        // 开启10个线程，每个线程对MyData中的atomicInteger自增1000次
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 1000; j++) {
@@ -73,20 +74,17 @@ public class AtomicDemo {
         while (Thread.activeCount() > 2){
 
         }
-
         //输出结果(保证是10000)
         System.out.println("number =" + data.atomicInteger);
-
-
     }
 }
 
 class MyData{
-    //利用AtomicInteger保证原子性
-    volatile AtomicInteger atomicInteger = new AtomicInteger(0);
+    // 创建一个值为0的原子整型
+    AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public void plusOne(){
-        //相当于number++操作
+        // 对原子整型自增，相当于number++操作
         atomicInteger.getAndIncrement();
     }
 }

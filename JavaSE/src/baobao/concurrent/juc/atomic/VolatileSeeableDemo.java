@@ -32,7 +32,8 @@ volatile关键字修饰的变量可以在某线程的工作内存中修改了共
 
 public class VolatileSeeableDemo {
     //增加volatile关键字，保证共享数据的可见性
-    private volatile static boolean flag = false;
+    //private volatile static boolean flag = false;
+    private static boolean flag = false;
     //private volatile static Boolean flag = false;
     public static void main(String[] args) throws InterruptedException {
         //这里除了内存可见性的问题，java帮我们做了另一层优化才导致不加volatile不行：
@@ -40,6 +41,8 @@ public class VolatileSeeableDemo {
         //从主内存去读取flag的最新值，每次都从cpu缓存中去值，所以导致了永远都感知不到其他线程对flag的修改
         new Thread(() -> {
             while (true){
+                // 加上print，即使flag不用volatile，也能正常跳出循环
+                System.out.print("");
                 if (flag){
                     System.out.println(Thread.currentThread().getName() + " : flag is " + flag);
                     break;
@@ -53,7 +56,6 @@ public class VolatileSeeableDemo {
             flag = true;
             System.out.println(Thread.currentThread().getName() + " : flag is " + flag);
         }, "thread2").start();
-
     }
 }
 

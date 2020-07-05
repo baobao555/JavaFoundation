@@ -1,5 +1,7 @@
 package baobao.concurrent.juc.atomic;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author baobao
  * @create 2019-09-14 21:06
@@ -9,7 +11,7 @@ package baobao.concurrent.juc.atomic;
 //原子性：即一致性，数据的操作不能被中断
 //volatile不能保证原子性，在多线程访问中会出现安全问题
 public class VolatileNotAtomicDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Data data = new Data();
         /*
         这里开启了10个线程，每个线程对number进行1000次++操作，理想结果应为10000
@@ -30,19 +32,16 @@ public class VolatileNotAtomicDemo {
 
         //等待所有子线程执行结束，因为默认后台有2个线程：主线程和GC线程，存活线程数大于2说明我们开的线程没执行完
         while (Thread.activeCount() > 2){
-
+            TimeUnit.SECONDS.sleep(1);
         }
 
         //输出结果(大概率不是理想值10000)
         System.out.println("number =" + data.number);
-
-
     }
 }
 
 class Data{
     volatile int number = 0;
-
     public void plusOne(){
         number++;
     }

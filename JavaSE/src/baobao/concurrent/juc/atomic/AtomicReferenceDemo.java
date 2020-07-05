@@ -19,8 +19,8 @@ public class AtomicReferenceDemo {
 
         atomicReference.set(u1);
 
-        System.out.println(atomicReference.compareAndSet(u1, u2) + atomicReference.get().toString());
-        System.out.println(atomicReference.compareAndSet(u1, u2) + atomicReference.get().toString());
+        System.out.println(atomicReference.compareAndSet(u1, u2) + ":" + atomicReference.get().toString());
+        System.out.println(atomicReference.compareAndSet(u1, u2) + ":" + atomicReference.get().toString());
     }
 }
 
